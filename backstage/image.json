@@ -1,0 +1,21 @@
+{
+  "code": 0,
+  "data": {
+    "swiperList": [{
+        "link": "",
+        "imgSrc": "http://i0.hdslb.com/bfs/archive/7e5a5e24abf76af9c05efdb293ab77a963d641a2.jpg@880w_440h.jpg",
+        "content": "告白就趁现在~"
+      },
+      {
+        "link": "",
+        "imgSrc": "https://i0.hdslb.com/bfs/archive/5bf469350f8dd69138ccd8df97099e4e93796f09.jpg@880w_440h.jpg",
+        "content": "秦版匆匆那年6月6日20点B站首播"
+      },
+      {
+        "link": "",
+        "imgSrc": "http://i0.hdslb.com/bfs/archive/1a461ca6c29354517f8fb45f794cc48cb33e41e9.jpg@160w_100h.webp",
+        "content": "游戏新秀奖又来啦!"
+      }
+    ]
+  }
+}
