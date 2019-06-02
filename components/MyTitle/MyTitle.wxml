@@ -1,7 +1,7 @@
 <view class="my-title">
-  <navigator class="logo">
+  <view class="logo-icon">
     <image class="logo-image" src="../../icon/logo2.png"></image>
-  </navigator>
+  </view>
   <view class="search-icon">
     <image class="search-image" src="../../icon/search.png"></image>
   </view>

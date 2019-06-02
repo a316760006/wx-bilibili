@@ -1,22 +1,58 @@
 // pages/detail/detail.js
+function getRandomColor() {
+  const rgb = []
+  for (let i = 0; i < 3; ++i) {
+    let color = Math.floor(Math.random() * 256).toString(16)
+    color = color.length == 1 ? '0' + color : color
+    rgb.push(color)
+  }
+  return '#' + rgb.join('')
+}
 Page({
-
+  /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+  onReady: function (res) {
+    this.videoContext = wx.createVideoContext('myVideo');
+  },
+  inputValue: '',
   /**
    * 页面的初始数据
    */
   data: {
     videoInfo: null,
     othersList: [],
-    commentData: []
+    commentData: [],
+    src: '',
+    danmuList:
+      [{
+        text: '第 1s 出现的弹幕',
+        color: '#ff0000',
+        time: 1
+      },
+      {
+        text: '第 3s 出现的弹幕',
+        color: '#ff00ff',
+        time: 3
+      }]
+  },
+
+  bindInputBlur: function (e) {
+    this.inputValue = e.detail.value;
+  },
+  bindSendDanmu: function () {
+    this.videoContext.sendDanmu({
+      text: this.inputValue,
+      color: getRandomColor()
+    });
   },
 
   // 获取视频详情
   getCurrentVideo(videoId){
     const _this = this;
     wx.request({
-      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/videoDetail?id=' + videoId,
+      url: 'https://www.easy-mock.com/mock/5cef4f907778277d6f0e5558/aaa/videoDetail',
       success(res) {
-        console.log(res.data)
         if (res.data.code === 0) {
           _this.setData({
             videoInfo: res.data.data.videoInfo
@@ -32,7 +68,6 @@ Page({
     wx.request({
       url: 'https://www.easy-mock.com/mock/5cef4f907778277d6f0e5558/aaa/othersList?id='+videoId,
       success(res){
-        console.log(res.data)
         if(res.data.code === 0) {
           _this.setData({
             othersList: res.data.data.othersList
@@ -67,12 +102,7 @@ Page({
     this.getCommentList(videoId);
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
+  
 
   /**
    * 生命周期函数--监听页面显示

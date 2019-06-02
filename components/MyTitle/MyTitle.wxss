@@ -7,7 +7,7 @@
   background-color: #fff;
 }
 
-.logo {
+.logo-icon {
   flex: 7;
 }
 

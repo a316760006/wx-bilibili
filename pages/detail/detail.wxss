@@ -80,7 +80,19 @@
   font-size: 28rpx;
 }
 
-.comment-list {}
+.weui-input {
+  width: 100%;
+  height: 5%;
+  border: 1rpx solid red;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 28rpx;
+}
+
+.Headline {
+  font-size: 38rpx;
+  
+}
 
 .comment-item {
   display: flex;
